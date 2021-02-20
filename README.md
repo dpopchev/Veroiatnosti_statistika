@@ -1,1 +1,1 @@
-# probability_and_statistics
+# Статистика и вероятности
