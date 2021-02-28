@@ -39,7 +39,7 @@ LOCAL_DIR=src/$(TOPIC)
 download:
 	@mkdir -p $(LOCAL_DIR)
 	rclone copy remote:$(DRIVE_DIR) --include '*.jpg' $(LOCAL_DIR)/. --progress
-	@ls $(LOCAL_DIR) | cat -n | while read n f; do mv "$(LOCAL_DIR)/$$f" "$(LOCAL_DIR)/$(TOPIC)_$$n.jpg"; done
+	@ls -r $(LOCAL_DIR) | cat -n | while read n f; do mv "$(LOCAL_DIR)/$$f" "$(LOCAL_DIR)/$(TOPIC)_$$n.jpg" && mogrify -resize 800 -auto-orient "$(LOCAL_DIR)/$(TOPIC)_$$n.jpg"; done
 
 .DEFAULT_GOAL: none
 .PHONY: none
