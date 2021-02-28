@@ -33,6 +33,14 @@ $(SEMINARS): $$(basename $$(notdir $$(wildcard src/$$@/*.md)))
 clean:
 	@rm -rf $(BUILD_DIR)
 
+DRIVE_DIR=UASG/Notes
+LOCAL_DIR=src/$(TOPIC)
+.PHONY: download
+download:
+	@mkdir -p $(LOCAL_DIR)
+	rclone copy remote:$(DRIVE_DIR) --include '*.jpg' $(LOCAL_DIR)/. --progress
+	@ls $(LOCAL_DIR) | cat -n | while read n f; do mv "$(LOCAL_DIR)/$$f" "$(LOCAL_DIR)/$(TOPIC)_$$n.jpg"; done
+
 .DEFAULT_GOAL: none
 .PHONY: none
 none:
