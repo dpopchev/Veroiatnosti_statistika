@@ -7,9 +7,9 @@
 
 ## Конспект
 
-1. семинар
-    - Числови редове
-    - Сходимост
+1. <span style="background-color: #FFFF00">семинар</span>
+    - <span style="background-color: #FFFF00">Числови редове</span>
+    - <span style="background-color: #FFFF00">Сходимост</span>
     - Критерии за сходимост
 1. семинар
     - Алтернативни редове -- критерий на Лайбниц
